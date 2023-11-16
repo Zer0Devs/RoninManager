@@ -1,0 +1,17 @@
+const { SlashCommandBuilder, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js')
+
+module.exports = {
+  data: new SlashCommandBuilder()
+  .setName('pong2')
+  .setDescription('Hace pong al bot'),
+
+  async execute(interaction, client) {
+
+    const embed = new EmbedBuilder()
+    .setTitle('Pong!')
+    .setDescription(`Ping: ${client.ws.ping}ms`)
+    .setColor('Random')
+
+    interaction.reply({ embeds: [embed]})
+  }
+}
